@@ -1,6 +1,15 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import {
+    Button,
+    Grid,
+    TextField,
+    Typography,
+    FormControl,
+    FormLabel,
+    RadioGroup,
+    FormControlLabel,
+    Radio,
+} from "@mui/material";
 import React from "react";
-
 
 // returning the form components
 const Form: React.FC = () => {
@@ -21,13 +30,16 @@ const Form: React.FC = () => {
                     <TextField
                         label="First Name"
                         variant="standard"
+                        required={true}
                         // defaultValue="Name"
                     ></TextField>
                 </Grid>
+
                 <Grid item xs={12} sm={6}>
                     <TextField
-                        label="First Name"
+                        label="Age"
                         variant="standard"
+                        required={true}
                         // defaultValue="Name"
                     ></TextField>
                 </Grid>
@@ -35,16 +47,34 @@ const Form: React.FC = () => {
 
             <Grid container m={4} rowGap={2}>
                 <Grid item xs={12} sm={6}>
-                    <TextField
-                        label="First Name"
-                        variant="standard"
-                        // defaultValue="Name"
-                    ></TextField>
+                    <FormControl>
+                        <FormLabel required={true}>Sex</FormLabel>
+                        <RadioGroup row name="gender-radio">
+                            <FormControlLabel
+                                value="female"
+                                control={<Radio />}
+                                label="Female"
+                            />
+                            <FormControlLabel
+                                value="male"
+                                control={<Radio />}
+                                label="Male"
+                            />
+                            {/* <FormControlLabel
+                value="other"
+                control={<Radio />}
+                label="Other"
+              /> */}
+                        </RadioGroup>
+                    </FormControl>
                 </Grid>
+
                 <Grid item xs={12} sm={6}>
                     <TextField
-                        label="First Name"
+                        label="Mobile Number"
                         variant="standard"
+                        inputMode="numeric"
+                        required={true}
                         // defaultValue="Name"
                     ></TextField>
                 </Grid>
@@ -52,34 +82,30 @@ const Form: React.FC = () => {
 
             <Grid container m={4} rowGap={2}>
                 <Grid item xs={12} sm={6}>
-                    <TextField
-                        label="First Name"
-                        variant="standard"
-                        // defaultValue="Name"
-                    ></TextField>
+                    <FormControl>
+                        <FormLabel required={true}>
+                            Govt Issued ID Type
+                        </FormLabel>
+                        <RadioGroup defaultValue="aadhar" row>
+                            <FormControlLabel
+                                value="aadhar"
+                                control={<Radio />}
+                                label="Aadhar"
+                            ></FormControlLabel>
+                            <FormControlLabel
+                                value="pan"
+                                control={<Radio />}
+                                label="PAN"
+                            ></FormControlLabel>
+                        </RadioGroup>
+                    </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                    <TextField
-                        label="First Name"
-                        variant="standard"
-                        // defaultValue="Name"
-                    ></TextField>
-                </Grid>
-            </Grid>
 
-            <Grid container m={4} rowGap={2}>
                 <Grid item xs={12} sm={6}>
                     <TextField
-                        label="First Name"
+                        label="Govt Issued ID"
                         variant="standard"
-                        // defaultValue="Name"
-                    ></TextField>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    <TextField
-                        label="First Name"
-                        variant="standard"
-                        // defaultValue="Name"
+                        required={true}
                     ></TextField>
                 </Grid>
             </Grid>
@@ -95,7 +121,7 @@ const Form: React.FC = () => {
             >
                 <Button
                     sx={{
-                        padding: "4px 16px",
+                        padding: "6px 24px",
                         backgroundColor: "#efefef",
                         color: "#8c8c8c",
                         borderRadius: "25px",
@@ -110,7 +136,7 @@ const Form: React.FC = () => {
                 </Button>
                 <Button
                     sx={{
-                        padding: "4px 16px",
+                        padding: "6px 24px",
                         backgroundColor: "#52a5e5",
                         borderRadius: "25px",
                         fontSize: "16px",
@@ -126,6 +152,6 @@ const Form: React.FC = () => {
             </Grid>
         </>
     );
-}
+};
 
 export default Form;

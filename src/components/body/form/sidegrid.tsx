@@ -1,7 +1,6 @@
 import { Grid } from "@mui/material";
 import React from "react";
 
-
 // sidegrid component structure
 const Sidegrid: React.FC = () => {
     return (
@@ -16,6 +15,6 @@ const Sidegrid: React.FC = () => {
             ></div>
         </>
     );
-}
+};
 
 export default Sidegrid;

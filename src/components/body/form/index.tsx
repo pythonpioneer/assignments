@@ -3,7 +3,6 @@ import React from "react";
 import Sidegrid from "./sidegrid";
 import Form from "./form";
 
-
 // to render the form structure and the left color grid
 const Index: React.FC = () => {
     return (
@@ -12,12 +11,13 @@ const Index: React.FC = () => {
                 <Grid item xs={2} sm={3}>
                     <Sidegrid />
                 </Grid>
+
                 <Grid item px={4} py={3} xs={8}>
                     <Form />
                 </Grid>
             </Grid>
         </>
     );
-}
+};
 
 export default Index;
