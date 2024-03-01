@@ -56,7 +56,7 @@ const userSlice = createSlice({
         },
 
         // here we will set the address of the user
-        serUserAddress: (state, action: PayloadAction<FormData>) => {
+        setUserAddress: (state, action: PayloadAction<FormData>) => {
             state.address = action.payload.address;
             state.state = action.payload.state;
             state.city = action.payload.city;
@@ -67,5 +67,5 @@ const userSlice = createSlice({
 });
 
 // now export all the action and reducers
-export const { } = userSlice.actions;
+export const { setUserPersonalData, setUserAddress } = userSlice.actions;
 export default userSlice.reducer;
